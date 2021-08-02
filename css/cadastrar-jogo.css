@@ -1,0 +1,18 @@
+.container-cadastrar-jogo{
+    display: none;
+    position:absolute;
+    top: 50px;
+    left: 50px;
+    width: 600px;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.fechar{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}

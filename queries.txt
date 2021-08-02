@@ -1,0 +1,105 @@
+------------Gerar pontuação por grupo, decrescente ----------------------
+
+SELECT id, id_usuario, pontuacao FROM usuario_pontos
+WHERE id in
+(SELECT MAX(id)FROM usuario_pontos
+WHERE grupo_individual = 1 AND id_jogo = 3
+GROUP BY id_usuario)
+ORDER BY pontuacao DESC
+
+
+
+------------Gerar pontuação individual descrescente ----------------------
+
+
+SELECT id, id_usuario, pontuacao FROM usuario_pontos
+WHERE id in
+(SELECT MAX(id)FROM usuario_pontos
+WHERE grupo_individual = 0 AND id_jogo = 3
+GROUP BY id_usuario)
+ORDER BY pontuacao DESC
+
+
+-----------Contar o número de partidas por usuário por jogo------------------------
+
+SELECT count(DISTINCT p.id_time) as qtde_partidas FROM partida AS p 
+INNER JOIN time as t 
+ON p.id_time = t.id AND t.qtde_jogadores = 1
+INNER JOIN compoe_time AS ct
+ON p.id_time = ct.id_time AND ct.id_usuario = 2
+WHERE p.id_jogo = 3
+
+
+-----------Contar o número de vitórias por usuário por jogo individual------------------------
+
+SELECT COUNT(DISTINCT p.id_time) as resultado FROM partida AS p 
+INNER JOIN time as t 
+ON p.id_time = t.id AND t.qtde_jogadores = 1
+INNER JOIN compoe_time AS ct
+ON p.id_time = ct.id_time AND ct.id_usuario = 2
+WHERE p.id_jogo = 3 AND p.resultado = 0
+
+-----------Contar o número de vitórias por usuário por jogo em grupo------------------------
+
+SELECT COUNT(DISTINCT p.id_time) as resultado FROM partida AS p 
+INNER JOIN time as t 
+ON p.id_time = t.id AND t.qtde_jogadores = 2
+INNER JOIN compoe_time AS ct
+ON p.id_time = ct.id_time AND ct.id_usuario = 2
+WHERE p.id_jogo = 3 AND p.resultado = 0
+
+
+-----------Histórico de partidas---------------------------------------------------
+
+SELECT p.id_time, p.id_time_oponente, p.data, p.resultado, t.qtde_jogadores, p.id_jogo FROM partida as p
+INNER JOIN compoe_time as ct
+ON p.id_time = ct.id_time
+INNER JOIN time as t
+ON p.id_time = t.id
+WHERE ct.id_usuario = 2
+ORDER BY p.data DESC
+
+-----------Número de partidas para Oponentes frequentes-----------------------------------------------------
+
+SELECT ct.id_usuario as oponente, count(ct.id_usuario) as qtde FROM compoe_time as ct 
+WHERE ct.id_time in (SELECT id_time_oponente FROM partida as p
+INNER JOIN compoe_time as ct
+ON p.id_time = ct.id_time
+WHERE ct.id_usuario = 2 AND p.id_jogo = 3
+ORDER BY p.data DESC)
+GROUP BY oponente
+
+-----------Número de vitórias contra oponentes frequentes -------------------------------
+
+SELECT *FROM compoe_time as ct 
+            WHERE ct.id_usuario = 5 AND ct.id_time in
+            (SELECT p.id_time_oponente FROM partida as p
+            INNER JOIN compoe_time as ct
+            ON p.id_time = ct.id_time AND ct.id_usuario = 2
+            WHERE p.resultado = 0 AND p.id_jogo =3)
+
+
+-------Número de partidas para Aliados frequentes ----------------------------------
+
+SELECT ct.id_usuario as aliado, count(ct.id_usuario) as numero_partidas FROM compoe_time as ct
+WHERE ct.id_time in (SELECT ct.id_time as time FROM compoe_time as ct
+INNER JOIN time as t
+ON ct.id_time = t.id AND t.qtde_jogadores =2
+WHERE ct.id_usuario = 2) AND ct.id_usuario <> 2
+GROUP BY ct.id_usuario 
+ORDER BY numero_partidas DESC
+
+---------Contando o número de vitórias nas partidas com alidados---------------------
+
+SELECT count(ct.id) as resultado FROM compoe_time as ct 
+WHERE ct.id_usuario = 5 AND ct.id_time in (SELECT ct.id_time as time FROM compoe_time as ct
+INNER JOIN time as t
+ON ct.id_time = t.id AND t.qtde_jogadores =2
+INNER JOIN partida as p 
+ON p.id_time = t.id AND p.resultado = 0 AND p.id_jogo =3                             
+WHERE ct.id_usuario = 2)
+
+
+<?php $mysqltime = date ('Y-m-d H:i:s', $phptime); ?>
+
+

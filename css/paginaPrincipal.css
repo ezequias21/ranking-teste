@@ -1,0 +1,310 @@
+.fechar {
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    cursor: pointer;
+    font-size: 2.2em;
+}
+
+
+/*Estilos da navegação */
+
+.navbar-light .navbar-nav .nav-link {
+    /* color: rgba(0,0,0,.5); */
+    color: #666666;
+    -webkit-text-stroke-width: 0;
+    color: #666666;
+    letter-spacing: 0.4;
+    font-size: 1.1em;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, .6);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+a {
+    cursor: pointer;
+}
+
+/*Fim dos estilos da navegação */
+
+/*Estilos do modal cadastrar jogo */
+
+.container-cadastrar-jogo, .containter-criar-usuario, .containter-atualizar-usuario {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: none;
+}
+
+.btn-qtde-jogadores {
+    background-color: rgb(205, 27, 34);
+    display: inline-block;
+    padding: 10px 40px;
+    border: 2px solid rgb(205, 27, 34);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid rgb(205, 27, 34);
+    margin: 8px;
+    transition: 0.5s;
+}
+
+.btn-qtde-jogadores-selecionado {
+    background-color: white;
+    color: #666;
+}
+
+#cadastrar-jogo, #form-criar-usuario {
+    background-color: white;
+    border-radius: 5px;
+    margin: 30px auto auto auto;
+}
+
+input[name=submit-cadastrar-jogo], input[name=submit-criar-usuario] {
+    background-color: rgb(205, 27, 34);
+    padding: 10px 40px;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid rgb(205, 27, 34);
+    transition: 0.5s;
+}
+
+input[name=submit-cadastrar-jogo]:focus, input[name=submit-criar-usuario]:focus {
+    background-color: transparent;
+    color: rgb(205, 27, 34);
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #cadastrar-jogo, #form-criar-usuario {
+        margin: 0;
+        border-radius: 0;
+    }
+}
+
+/* The Close Button (x) */
+
+.fechar {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.fechar:hover, .fechar:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/*Fim dos estilos do modal cadastrar jogo */
+
+/*Estilos do modal cadastar usuário */
+
+.file-upload {
+    border-radius: 5px;
+    outline: none;
+}
+
+::-webkit-file-upload-button {
+    color: white;
+    background: rgb(205, 27, 34);
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+}
+
+img.icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+img.icon:hover {
+    border: 2px solid black;
+    opacity: 0.8;
+}
+
+#container-input-nickname {
+    position: relative;
+}
+
+/*Fim do estilos do modal cadastar usuário */
+
+/*Estilos da página jogo*/
+
+body {
+    background-color: rgb(205, 27, 34);
+}
+
+.text-title {
+    color: black;
+    background-color: transparent;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    font-size: 3.5em;
+}
+
+.card {
+    border: none;
+    border-radius: .3rem;
+}
+
+.card-img-top {
+    height: 11rem;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+    object-fit: cover;
+}
+
+[nome-usuario-valido=true]::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 24px;
+    height: 24px;
+    background: url("../imgs/icons/valid.png");
+    background-size: cover;
+    z-index: 1000;
+}
+
+[nome-usuario-valido=false]::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 24px;
+    height: 24px;
+    background: url("../imgs/icons/invalid.png");
+    background-size: cover;
+    z-index: 1000;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2C5364;
+    z-index: -1;
+    transition: transform .6s ease-in-out;
+    transition-delay: 0.1s;
+}
+
+.card:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -2;
+    transition: transform .6s ease-in-out;
+}
+
+.card:hover:before {
+    transform: rotate(-5deg);
+}
+
+.card:hover:after {
+    transform: rotate(-10deg);
+}
+
+/*Fim da página de estilos jogos */
+
+/*Estilos para o background de ícones */
+
+.background-icons {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+i {
+    padding: 20px;
+    color: white;
+    font-size: 2.8rem;
+    /*  z-index: -5; */
+    opacity: 0.08;
+}
+
+i:hover {
+    opacity: 1;
+}
+
+/*Fim dos estilos de background de ícones */
+
+/**Estilos da página atualizar usuário*/
+
+.container-img-camera .icon-camera {
+    position: absolute;
+    bottom: -28px;
+    right: -23px;
+    color: #666;
+    opacity: 1;
+    z-index: 10;
+}
+
+.container-img-camera span {
+    display: inline-block;
+    width: 105px;
+    height: 105px;
+    position: relative;
+}
+
+.container-img-camera img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+/**Fim dos estilos atualizar usuário*/

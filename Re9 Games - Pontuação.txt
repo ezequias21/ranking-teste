@@ -1,0 +1,70 @@
+Re9 Games - Sistema de Pontos
+
+Cada Player inicia-se com 1600 pontos.
+
+Para partida 1x1:
+
+Cada player terá 16 pontos para serem conquistados inicialmente.
+
+Para equilibrar o nivel dos jogadores. Esses pontos poderão ser maior ou menor para cada Player. 
+
+O Player que tiver a pontuação maior na partida receberá no máximo 16 pontos e consequentemente o jogar que peder a partida poderá perder no máximo 16 pontos.
+
+Essa pontuação na vitória ou na derrota poderá ser diferente de 16 a depender da pontuação do seu adversário.
+
+Cálculo do peso (arredondado):
+
+P = ((PontuaçãoMenor/PontuaçãoMaior-1)*100)/2
+
+P não poderá ser maior que 8.
+
+Vitoria do Player com maior pontos
+Pontos ganhos = 16 - P
+
+Vitoria do Player com menor pontos
+Pontos ganhos = 16 + P
+
+Os pontos perdido pelo player derrotado será igual a pontuação ganha do player vitorioso.
+
+Ex1:
+Player1 (1600) x Player2 (1600)
+
+P = (int) ((1600/1600-1)*100)/2 = 0
+
+Player1 Venceu
+P1 -> 16 - 0 = +16
+P2 -> -16 + 0 = -16
+
+Player2 Venceu
+P1 -> -16 - 0 = -16
+P2 -> 16 + 0 = +16
+
+Ex2:
+
+
+Player1 (1637) x Player2 (1600)
+
+P = ((1600/1637-1)*100/2) = -1,13 = 1
+
+Player1 Venceu
+P1 -> 16 - 1 = +15
+P2 -> -16 + 1 = -15
+
+Player2 Venceu
+P1 -> -16 - 1 = -17
+P2 -> 16 + 1 = +17
+
+Ex3:
+Player1 (1730) x Player2 (1600)
+
+P = ((1600/1730-1)*100/2) = -3,75 = 4
+
+Player1 Venceu
+P1 -> 16 - 4 = +12
+P2 -> -16 + 4 = -12
+
+Player2 Venceu
+P1 -> -16 - 4 = -20
+P2 -> 16 + 4 = +20
+
+O jogador que tiver menos Pontos sempre irá somar com o calculo peso "P" e o jogador com mais pontos irá subitrair do calculo peso "P"

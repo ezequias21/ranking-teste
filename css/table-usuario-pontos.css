@@ -1,0 +1,478 @@
+/**Estilos da tabela partida */
+
+.container-partidas {
+  position: relative;
+}
+
+/**Fim dos estilos da tabela partida */
+
+/*Estilso para o card usuário*/
+
+.card-usuario {
+  position: absolute;
+  top: -138px;
+  left: 0;
+  background-color: transparent;
+  width: 10rem;
+  height: 11rem;
+  perspective: 1000px;
+  margin: 10px;
+}
+
+.card-inner {
+  position: relative;
+  cursor: pointer;
+  background-color: #4d4d4d;
+  border-radius: 5px;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  /* text-align: center; */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-inner:hover {
+  background-color: #666;
+}
+
+.card-usuario-front {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-usario-image {
+  width: 5rem;
+  height: 5rem;
+}
+
+.card-usario-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.card-content {
+  padding: 13px 23px;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 767px) {
+  .card-usuario {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/**Fim dos estilos do card usuário */
+
+li {
+  list-style-type: none;
+}
+
+.time-icon {
+  padding: 10px;
+  width: 198px;
+  /*  background-color: #ddd; */
+}
+
+img {
+  width: 2.9rem;
+  height: 2.9rem;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.img-icon span {
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+}
+
+tr {
+  vertical-align: baseline;
+}
+
+li {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.active-item-menu {
+  background-color: #ddd;
+}
+
+/** ------------------------*/
+
+.img-icone-game {
+  position: relative;
+  width: 5rem;
+  height: 3rem;
+  z-index: 0;
+  margin: 0 24px;
+}
+
+.img-icone-game img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.img-icone-game::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #537895;
+  transform: rotate(-5deg);
+  z-index: -1;
+}
+
+.img-icone-game::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #592c1d;
+  transform: rotate(-10deg);
+  z-index: -1;
+}
+
+.img-icone-game span {
+  position: relative;
+  bottom: 12px;
+  background-color: white;
+  border-radius: 0;
+  padding: 10px;
+  background-color: #4d4d4d;
+  color: #ddd;
+}
+
+@media screen and (max-width: 767px) {
+  .img-icone-game {
+    position: relative;
+    top: 31px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .time-icon span {
+    display: block;
+  }
+  .time-icon span:nth-child(3) {
+    position: relative;
+    text-align: center;
+    left: -52px;
+  }
+}
+
+/**Estilos para as abas da tabela */
+
+.nav-sub-menu {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: -55px;
+}
+
+.nav-sub-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-sub-menu li {
+  width: 130px;
+}
+
+.nav-sub-menu span {
+  background-color: #4d4d4d;
+  border-radius: 20px 20px 0px 0px;
+  display: inline-block;
+  border-left: 1px solid #666;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px 25px;
+  width: 135px;
+  color: white;
+  z-index: -1;
+  text-align: center;
+}
+
+.nav-sub-menu .active {
+  background-color: #ddd;
+  color: #4d4d4d;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-sub-menu {
+    position: relative;
+    right: 0;
+    top: -145px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    color: #4d4d4d;
+  }
+  .nav-sub-menu ul {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .nav-sub-menu li {
+    width: auto;
+    margin: 4px;
+    border: 0;
+    border: 1px solid #ddd;
+    border-radius: 36px;
+    background-color: white;
+  }
+  .nav-sub-menu span {
+    background-color: white;
+    border-radius: 48px;
+    background-color: transparent;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 10px 25px;
+    border-radius: 36px;
+    color: inherit;
+    z-index: -1;
+    text-align: center;
+    border: 0;
+    letter-spacing: 4px;
+    width: 100%;
+  }
+  .nav-sub-menu .active {
+    background-color: #4d4d4d;
+    color: #ddd;
+  }
+}
+
+/**Fim dos estilos para as abas da tabela */
+
+/**Estilos do container dos jogos */
+
+.content {
+  background-color: white;
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+    padding: 1rem;
+  }
+}
+
+/**Fim dos estilos do container dos jogos */
+
+/**Estilos do cabeçalho da tabela das estatísticas */
+
+.table-header-title {
+  font-size: 1.4rem;
+  background-color: #4d4d4d;
+  color: #ddd;
+  padding: 8px;
+  border-radius: 20px 20px 0 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+/**Fim dos estilos da tabela das estatísticas */
+
+@media screen and(max-width: 767px) {
+  .container-table {
+    position: relative;
+    top: 10px;
+  }
+}
+
+/*Estilos para o background*/
+
+.background-icons {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+i {
+  padding: 20px;
+  color: #666;
+  font-size: 2.8rem;
+  z-index: -10;
+  opacity: 0.05;
+}
+
+i:hover {
+  color: #666;
+}
+
+/*Fim dos estilos do background*/
+
+.trofeu {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+table {
+  background-color: white;
+  box-shadow: 4px 3px 14px 3px rgba(0, 0, 0, 0.28);
+  border-radius: 5px;
+}
+
+.table {
+  background-color: white;
+}
+
+.title-raking {
+  -webkit-text-stroke-width: 2px;
+  color: #666;
+  letter-spacing: 1px;
+  font-size: 2.4em;
+  margin: 30px;
+}
+
+td, th {
+  height: 60px;
+  text-align: center;
+}
+
+.icon-usuario-ranking {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .trofeu {
+    width: 80px;
+    height: 120px;
+    border-radius: 0;
+    object-fit: cover;
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: white;
+  }
+  .table-striped tbody tr {
+    width: 100%;
+  }
+  table {
+    box-shadow: none;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody {
+    padding: 0 10px;
+  }
+  table tbody tr td:before {
+    content: attr(data-title);
+    display: block;
+    font-weight: 400;
+    font-size: 0.8em;
+    color: #666;
+  }
+  table tbody tr td:nth-child(3) {
+    margin-left: 50%;
+  }
+  #ranking tbody tr td:nth-child(3) {
+    margin-left: auto;
+  }
+  #ranking tbody tr td:nth-child(7) {
+    width: 100%;
+  }
+  table tbody tr th {
+    display: block;
+    width: 50%;
+    float: left;
+  }
+  table tbody tr td {
+    display: block;
+    width: 50%;
+    float: left;
+    font-size: 1em;
+    color: #3f3f3f;
+    font-weight: 600;
+    text-align: start;
+    height: auto;
+  }
+  .table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #F3F3F3;
+  }
+  .container-usuario {
+    position: relative;
+    top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+  }
+  #aliados-frequentes tbody tr td, #oponentes-frequentes tbody tr td {
+    height: 62px;
+    padding: 10px 30px;
+  }
+  #ranking tbody tr td {
+    display: block;
+    float: left;
+    font-size: 1em;
+    color: #3f3f3f;
+    font-weight: 600;
+    text-align: start;
+    padding: 10px 30px;
+  }
+  table tbody tr {
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    float: left;
+    clear: both;
+    box-shadow: 4px 3px 14px 3px rgba(0, 0, 0, 0.28);
+  }
+  .col-span {
+    width: 100%;
+  }
+  .title-raking {
+    font-size: 1.9em;
+  }
+  .icon-usuario-ranking {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-table {
+    position: relative;
+    top: -145px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title-raking {
+    text-align: center;
+  }
+}

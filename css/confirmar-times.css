@@ -1,0 +1,137 @@
+#confirmar-times, #registrar-partida, #btn-deu-empate, #btn-voltar {
+    background-color: white;
+    color: #666;
+    border: 2px solid white;
+    padding: 10px 30px;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-text-stroke: 1px;
+    font-size: 1.4em;
+    margin: 10px;
+    transition: 0.5s;
+
+}
+
+#confirmar-times:hover,
+#registrar-partida:hover,
+#btn-deu-empate:hover,
+#btn-voltar:hover {
+    color: white;
+    background-color: transparent;
+}
+
+.times {
+    background-color: white;
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    cursor: pointer;
+}
+
+.selected-registrar-resultado {
+    padding: 10px 70px;
+    border-radius: 5px;
+    -webkit-text-stroke: 1px;
+    font-size: 1.4em;
+    color: #666;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.winner-img{
+    display: none;
+    position: relative;
+    width: 0;
+    margin-right: 30px;
+    opacity: 0.8;
+
+}
+.default-img{
+    display: none;
+    position: relative;
+    opacity: 0.8;
+}
+
+.winner-img-active{
+    display: block;
+    width: 90px;
+    animation: animatezoom 0.5s ease 1,  efeito-pendulo .5s ease 0.5s 4;
+}
+
+.default-img-active{
+    display: block;
+    width: 100px;
+    animation: animatezoom 0.5s ease-in, tremer .1s ease 0.5s 4;
+}
+
+#messages-confirmar-times {
+   
+    display: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: white;
+    margin: 19px;
+    text-align: center;
+    font-size: 1.4rem;
+    -webkit-text-stroke-width: 1px;
+    letter-spacing: 1.1px;
+    border: 1px solid currentColor;
+    margin-bottom: 0;
+    
+}
+.tremer{
+    animation: tremer 0.1s;
+    animation-iteration-count: 4;
+
+}
+.animate-winner-icon{
+    animation: animatezoom 0.5s ease 1,  efeito-pendulo .5s ease 0.5s 4;
+}
+
+@keyframes efeito-pendulo{
+    0%{
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(5deg);
+    }
+    
+}
+    
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes tremer {
+    0% {margin-left: 0; margin-right: 0;}
+    25% {margin-left: 5px; margin-right: -5px}
+    50% {margin-left: 0; margin-right: 0;}
+    75% {margin-left: -5px; margin-right: 5px}
+    100% {margin-left: 0; margin-right: 0 }
+  }
+
+@media screen and (max-width: 797px){
+    .winner-img{
+        display: none;
+    }
+    .winner-img-active{
+        width: 90px;
+    }
+}
+@media screen and (max-width: 565px){
+    .winner-img{
+        display: block;
+        top: 12px;
+        left: 30px;
+    }
+    .winner-img-active{
+        width: 90px;
+    }
+}

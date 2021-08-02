@@ -1,0 +1,37 @@
+
+.icon{
+    width: 64px;
+    border-radius: 100%;
+    margin: 2px;
+    
+}
+.icon:hover{
+    border: 3px solid #dddddd;
+    cursor: pointer;
+}
+
+h3{
+    text-align: center;
+}
+.form-criar-usuario{
+
+    width: 400px; 
+    height: 545px; 
+    border: 1px solid #dddddd; 
+    border-radius: 5px;
+}
+
+.containter-criar-usuario{
+    position: absolute;
+    display: none;
+    top: 35px;
+    left: 70px;
+    width: 500px;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.active{
+    display: block;
+}

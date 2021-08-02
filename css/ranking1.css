@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*Estilos para o background*/
+
+.background-icons {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+i {
+  padding: 20px;
+  color: #666;
+  font-size: 2.8rem;
+  z-index: -10;
+  opacity: 0.05;
+}
+
+i:hover {
+  color: #666;
+}
+
+/*Fim dos estilos do background*/
+
+.trofeu {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+
+table {
+  background-color: white;
+  box-shadow: 4px 3px 14px 3px rgba(0, 0, 0, 0.28);
+  border-radius: 5px;
+}
+
+.table {
+  background-color: white;
+}
+
+.title-raking {
+  -webkit-text-stroke-width: 2px;
+  color: #666;
+  letter-spacing: 1px;
+  font-size: 2.4em;
+  margin: 30px;
+}
+
+td, th {
+  height: 60px;
+  text-align: center;
+}
+
+.icon-usuario-ranking {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 767px) {
+  .trofeu {
+    width: 68px;
+    height: 101px;
+    border-radius: 0;
+    object-fit: cover;
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: white;
+  }
+  table {
+    box-shadow: none;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody {
+    padding: 0 10px;
+  }
+  table tbody, table tbody tr {
+    display: block;
+    width: 100%
+  }
+  /*Seleciona os títulos da tabela*/
+  table tbody tr td:before {
+    content: attr(data-title);
+    display: block;
+    font-weight: 400;
+    font-size: 0.8em;
+    color: #666;
+  }
+  table tbody tr td:nth-child(2):before {
+    content: '';
+  }
+  table tbody tr td:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  table tbody tr td:nth-child(3) {
+    margin-left: 50%;
+  }
+  table tbody tr th {
+    display: block;
+    width: 50%;
+    float: left;
+  }
+  /*Seleciona as linhas da tabela*/
+  table tbody tr td {
+    display: block;
+    width: 50%;
+    float: left;
+    font-size: 1em;
+    color: #3f3f3f;
+    font-weight: 600;
+    text-align: start;
+  }
+  table tbody tr {
+    background-color: white;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    float: left;
+    clear: both;
+    box-shadow: 4px 3px 14px 3px rgba(0, 0, 0, 0.28);
+  }
+  .ranking-position-label {
+    font-size: 2.1rem;
+    display: inline-block;
+    color: #4d4d4d;
+    position: relative;
+    top: 26px;
+    -webkit-text-stroke-width: 2.5px;
+  }
+  .table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #F3F3F3;
+  }
+  .col-span {
+    width: 100%;
+  }
+  .title-raking {
+    font-size: 1.9em;
+  }
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .title-raking {
+    text-align: center;
+  }
+}

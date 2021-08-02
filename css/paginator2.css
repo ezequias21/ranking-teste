@@ -1,0 +1,91 @@
+/**Estilos para a paginação */
+
+.pagination ul{
+    box-shadow: 4px 3px 14px 3px rgba(0,0,0,0.28);
+  }
+  .pagination ul{
+    display: flex;
+    background-color: white;
+    align-items: center;
+    padding: 0.3rem;
+    border-radius: 2rem;
+    
+  }
+  .pagination ul li{
+    list-style: none;
+    line-height: 45px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #666;
+    transition: ease 0.4s;
+  }
+  .pagination ul li.number{
+    height: 45px;
+    width: 45px;
+    margin: 0 3px;
+    border-radius: 50px;
+  }
+  .pagination ul li.dots{
+    font-size: 22px;
+  }
+  .pagination .btn-next span,
+  .pagination .btn-prev span{
+    display: inline-block;
+  }
+  .pagination ul li.btn-prev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px 5px 5px 25px;
+    padding: 0 10px;
+  
+  }
+  .pagination .icon-right, 
+  .pagination .icon-next{
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 0;
+    opacity: 1;
+    color: currentColor;
+   
+  }
+  .pagination ul li.btn-next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px 25px 25px 5px;
+    padding: 0 10px;
+  }
+  .pagination ul li.active{
+    background-color:  rgb(205, 27, 34);
+    color: white;
+  }
+  
+  .pagination ul li.btn-prev:hover,
+  .pagination ul li.btn-next:hover,
+  .pagination ul li.number:hover{
+    color: white;
+    background-color: rgb(205, 27, 34);
+  }
+
+  @media screen and (max-width: 767px){
+    .pagination ul{
+        padding: 0.2rem 0.1rem;
+
+    }
+    .pagination ul li{
+        font-size: 0.9rem;
+    }
+    .pagination ul li.btn-prev{
+        padding: 0 3px;
+    }    
+    .pagination ul li.btn-next {
+        padding: 0 3px;
+    }
+    .pagination ul li.number{
+        height: 43px;
+        width: 43px;
+    }
+  }
+  /**Fim dos estilos da paginação */

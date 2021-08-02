@@ -1,0 +1,58 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --red-home: rgb(205, 27, 34);
+    --gray-background: #dddddd;
+
+}
+.icon{
+    width: 64px;
+    border-radius: 100%;
+    margin: 2px;
+    
+}
+.icon:hover{
+    border: 3px solid #dddddd;
+    cursor: pointer;
+}
+input.form-submit {
+    background-color: var(--red-home);
+    outline: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    width: 327px;
+    align-self: center;
+}
+h3{
+    text-align: center;
+}
+.form-criar-usuario{
+
+    width: 400px; 
+    height: 545px; 
+    border: 1px solid #dddddd; 
+    border-radius: 5px;
+}
+
+
+input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    width: 347px;
+}
+
